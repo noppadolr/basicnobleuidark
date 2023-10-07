@@ -59,7 +59,7 @@ $(function() {
         },
         buttonsStyling: false,
       })
-      
+
       swalWithBootstrapButtons.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
@@ -133,12 +133,31 @@ $(function() {
         timer: 3000,
         timerProgressBar: true,
       });
-      
+
       Toast.fire({
         icon: 'success',
         title: 'Signed in successfully'
       })
+    }else if (type === 'login') {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+        });
+
+        Toast.fire({
+            icon: 'success',
+            title: 'Signed in successfully'
+        })
     }
+
+
+
+
+
+
   }
 
 });

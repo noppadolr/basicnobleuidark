@@ -416,7 +416,15 @@
         </div>
     </div> <!-- row -->
 
-
+    @push('script')
+        <script type="text/javascript">
+            @if(Session::has('logedin'))
+            $(document).ready( function () {
+                showSwal('login');
+            });
+            @endif
+        </script>
+    @endpush
 
 
 @endsection

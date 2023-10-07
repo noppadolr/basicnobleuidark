@@ -27,7 +27,7 @@ class AuthController extends Controller
                     );
                     $request->session()->regenerate();
                     if ($user->role === 'admin') {
-                        return redirect()->intended('admin/dashboard')->with($notification)->with('log-in','xxxxxxxxxx');
+                        return redirect()->intended('admin/dashboard')->with('logedin','Log in complete');
                     }elseif ($user->role === 'manager'){
                         return redirect()->intended('manager/dashboard')->with($notification);
 

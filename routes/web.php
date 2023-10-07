@@ -31,12 +31,17 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__.'/auth.php'
+
+;
 //AdminController All Route
 Route::middleware('auth')->group(function () {
     Route::controller(AdminController::class)->group(function (){
         Route::get('admin/dashboard','AdminDashboard')->name('admin.dashboard');
         Route::get('admin/profile','AdminProfile')->name('admin.profile');
+        Route::post('update/profile','UpdateProfile')->name('update.profile');
+        Route::get('change/password','ChangePassword')->name('change.password');
+        Route::post('update/password','UpdatePassword')->name('update.password');
     });
 
 

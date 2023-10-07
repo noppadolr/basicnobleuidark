@@ -19,6 +19,7 @@
 
     <!-- core:css -->
     <link rel="stylesheet" href="{{ asset('admin/assets/vendors/core/core.css') }}">
+    <link rel="stylesheet" href="{{asset('admin/assets/vendors/sweetalert2/sweetalert2.min.css')}}">
     <!-- endinject -->
 
     <!-- Plugin css for this page -->
@@ -68,8 +69,9 @@
 
 <!-- core:js -->
 <script src="{{ asset('admin/assets/vendors/core/core.js') }}"></script>
+<script src="{{ asset('jquery-3.7.1.min.js') }}"></script>
 <!-- endinject -->
-
+<script src="{{asset('admin/assets/vendors/sweetalert2/sweetalert2.min.js')}}"></script>
 <!-- Plugin js for this page -->
 <script src="{{ asset('admin/assets/vendors/flatpickr/flatpickr.min.js') }}"></script>
 <script src="{{ asset('admin/assets/vendors/apexcharts/apexcharts.min.js') }}"></script>
@@ -83,6 +85,8 @@
 <!-- Custom js for this page -->
 <script src="{{ asset('admin/assets/js/dashboard-dark.js') }}"></script>
 <!-- End custom js for this page -->
+<script src="{{asset('admin/assets/js/sweet-alert.js')}}"></script>
 @stack('script')
 </body>
 </html>
+
