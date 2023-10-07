@@ -141,9 +141,9 @@ $(function() {
     }else if (type === 'login') {
         const Toast = Swal.mixin({
             toast: true,
-            position: 'top-end',
+            position: 'bottom-end',
             showConfirmButton: false,
-            timer: 3000,
+            timer: 2000,
             timerProgressBar: true,
         });
 
@@ -151,7 +151,31 @@ $(function() {
             icon: 'success',
             title: 'Signed in successfully'
         })
-    }
+    }else if (type === 'logout') {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Signed out successfully',
+          showConfirmButton: false,
+          timer: 2000
+        })
+      }else if (type === 'password-updated') {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Updated Password successfully',
+          showConfirmButton: false,
+          timer: 2000
+        })
+      }else if (type === 'profile-updated') {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Updated Profile successfully',
+          showConfirmButton: false,
+          timer: 2000
+        })
+      }
 
 
 

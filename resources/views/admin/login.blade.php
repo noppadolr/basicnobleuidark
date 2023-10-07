@@ -30,6 +30,7 @@
 
     <!-- core:css -->
     <link rel="stylesheet" href="{{ asset('admin/assets/vendors/core/core.css') }}">
+    <link rel="stylesheet" href="{{asset('admin/assets/vendors/sweetalert2/sweetalert2.min.css')}}">
     <!-- endinject -->
 
     <!-- Plugin css for this page -->
@@ -131,6 +132,7 @@
 
 <!-- core:js -->
 <script src="{{ asset('admin/assets/vendors/core/core.js') }}"></script>
+<script src="{{asset('admin/assets/vendors/sweetalert2/sweetalert2.min.js')}}"></script>
 <!-- endinject -->
 
 <!-- Plugin js for this page -->
@@ -140,7 +142,7 @@
 <script src="{{ asset('admin/assets/vendors/feather-icons/feather.min.js') }}"></script>
 <script src="{{ asset('admin/assets/js/template.js') }}"></script>
 <script type="text/javascript" src="{{ asset('toastr/toastr.min.js') }}"></script>
-
+<script src="{{asset('admin/assets/js/sweet-alert.js')}}"></script>
 <script>
     @if(Session::has('message'))
         toastr.options = {
@@ -179,6 +181,19 @@
             break;
     }
     @endif
+</script>
+<script type="text/javascript">
+    @if(Session::has('logedout'))
+    $(document).ready( function () {
+        showSwal('logout');
+    });
+    @elseif (Session::has('passwordupdated'))
+    $(document).ready( function () {
+        showSwal('password-updated');
+    });
+    @endif
+
+
 </script>
 
 </body>

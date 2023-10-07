@@ -184,7 +184,7 @@
 
     </div>
     @push('script')
-        <script src="{{asset('jquery-3.7.1.min.js')}}"></script>
+        {{--  <script src="{{asset('jquery-3.7.1.min.js')}}"></script>  --}}
     <script type="text/javascript">
 
         $(document).ready(function(){
@@ -197,6 +197,17 @@
             });
         });
 
-            </script>
+    </script>
+
+    <script type="text/javascript">
+        @if(Session::has('Profileupdated'))
+        $(document).ready( function () {
+            showSwal('profile-updated');
+        });
+
+        @endif
+
+
+    </script>
     @endpush
 @endsection
