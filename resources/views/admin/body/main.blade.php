@@ -36,6 +36,7 @@
     <!-- End layout styles -->
 
     <link rel="shortcut icon" href="{{ asset('admin/assets/images/favicon.png') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('toastr.css') }}" />
     @stack('css')
 </head>
 <body>
@@ -86,6 +87,7 @@
 <script src="{{ asset('admin/assets/js/dashboard-dark.js') }}"></script>
 <!-- End custom js for this page -->
 <script src="{{asset('admin/assets/js/sweet-alert.js')}}"></script>
+<script type="text/javascript" src="{{asset('toastr.min.js')}}"></script>
 @stack('script')
 </body>
 </html>

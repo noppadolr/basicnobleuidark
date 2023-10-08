@@ -58,8 +58,12 @@ class AuthController extends Controller
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
+        $notification = array(
+            'message' => 'Logout Successfully',
+            'alert-type' => 'success'
+        );
 
-        return redirect('/')->with('logedout','log out complete');
+        return redirect('/')->with($notification)->with('logedout','log out complete');
     }//End method
 
 

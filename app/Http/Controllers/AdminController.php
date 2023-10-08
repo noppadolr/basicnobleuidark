@@ -32,7 +32,7 @@ class AdminController extends Controller
     public function UpdateProfile(Request $request){
 //      dd($request->all());
         $id = Auth::user()->id;
-        $data = User::find($id);
+        $data = User::query()->find($id);
         $data->name =$request->name;
         $data->username =$request->username;
         $data->phone =$request->phone;
@@ -95,7 +95,7 @@ class AdminController extends Controller
         $request->session()->regenerateToken();
 
 
-        return redirect('admin/login')->with($notification)->with('passwordupdated','password updated');
+        return redirect('admin/login')->with('passwordupdated','password updated');
 
     }//End UpdatePassword method
 }

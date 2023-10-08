@@ -35,7 +35,7 @@ require __DIR__.'/auth.php'
 
 ;
 //AdminController All Route
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth','role:admin'])->group(function () {
     Route::controller(AdminController::class)->group(function (){
         Route::get('admin/dashboard','AdminDashboard')->name('admin.dashboard');
         Route::get('admin/profile','AdminProfile')->name('admin.profile');
@@ -56,7 +56,7 @@ Route::controller(AuthController::class)->group(function (){
 });
 
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth','role:manager'])->group(function () {
     Route::controller(ManagerController::class)->group(function (){
         Route::get('manager/dashboard','ManagerDashboard')->name('manager.dashboard');
     });

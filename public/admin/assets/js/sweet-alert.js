@@ -139,18 +139,14 @@ $(function() {
         title: 'Signed in successfully'
       })
     }else if (type === 'login') {
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'bottom-end',
-            showConfirmButton: false,
-            timer: 2000,
-            timerProgressBar: true,
-        });
-
-        Toast.fire({
+        Swal.fire({
+            position: 'top-end',
             icon: 'success',
-            title: 'Signed in successfully'
+            title: 'Signed in successfully',
+            showConfirmButton: false,
+            timer: 2000
         })
+
     }else if (type === 'logout') {
         Swal.fire({
           position: 'top-end',

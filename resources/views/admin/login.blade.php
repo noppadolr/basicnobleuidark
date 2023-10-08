@@ -11,16 +11,7 @@
 
     <title>Login</title>
 
-{{--    <style type="text/css">--}}
 
-{{--        .authlogin-side-wrapper{--}}
-{{--            width: 100%;--}}
-{{--            height: 100%;--}}
-{{--            background-image: url({{ asset('upload/login.png')  }});--}}
-{{--        }--}}
-
-
-    </style>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,9 +21,8 @@
 
     <!-- core:css -->
     <link rel="stylesheet" href="{{ asset('admin/assets/vendors/core/core.css') }}">
-    <link rel="stylesheet" href="{{asset('admin/assets/vendors/sweetalert2/sweetalert2.min.css')}}">
     <!-- endinject -->
-
+    <link rel="stylesheet" href="{{asset('admin/assets/vendors/sweetalert2/sweetalert2.min.css')}}">
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
 
@@ -46,7 +36,7 @@
     <!-- End layout styles -->
 
     <link rel="shortcut icon" href="{{ asset('admin/assets/images/favicon.png') }}" />
-    <link rel="stylesheet" type="text/css" href="{{asset('toastr/toastr.css')}}" >
+    <link rel="stylesheet" type="text/css" href="{{asset('toastr.css')}}" />
 </head>
 <body>
 <div class="main-wrapper">
@@ -132,69 +122,29 @@
 
 <!-- core:js -->
 <script src="{{ asset('admin/assets/vendors/core/core.js') }}"></script>
-<script src="{{asset('admin/assets/vendors/sweetalert2/sweetalert2.min.js')}}"></script>
+<script src="{{ asset('jquery-3.7.1.min.js') }}"></script>
 <!-- endinject -->
-
+<script src="{{asset('admin/assets/vendors/sweetalert2/sweetalert2.min.js')}}"></script>
 <!-- Plugin js for this page -->
 <!-- End plugin js for this page -->
 
 <!-- inject:js -->
 <script src="{{ asset('admin/assets/vendors/feather-icons/feather.min.js') }}"></script>
 <script src="{{ asset('admin/assets/js/template.js') }}"></script>
-<script type="text/javascript" src="{{ asset('toastr/toastr.min.js') }}"></script>
 <script src="{{asset('admin/assets/js/sweet-alert.js')}}"></script>
-<script>
-    @if(Session::has('message'))
-        toastr.options = {
-        "closeButton": true,
-        "newestOnTop": false,
-        "progressBar": true,
-        "positionClass": "toast-bottom-center",
-        "preventDuplicates": false,
-        "onclick": null,
-        "showDuration": "300",
-        "hideDuration": "1000",
-        "timeOut": "4000",
-        "extendedTimeOut": "1000",
-        "showEasing": "swing",
-        "hideEasing": "linear",
-        "showMethod": "fadeIn",
-        "hideMethod": "fadeOut"
-    }
-
-    var type = "{{ Session::get('alert-type','info') }}"
-    switch(type){
-        case 'info':
-            toastr.info(" {{ Session::get('message') }} ");
-            break;
-
-        case 'success':
-            toastr.success(" {{ Session::get('message') }} ");
-            break;
-
-        case 'warning':
-            toastr.warning(" {{ Session::get('message') }} ");
-            break;
-
-        case 'error':
-            toastr.error(" {{ Session::get('message') }} ");
-            break;
-    }
-    @endif
-</script>
-<script type="text/javascript">
-    @if(Session::has('logedout'))
-    $(document).ready( function () {
-        showSwal('logout');
-    });
-    @elseif (Session::has('passwordupdated'))
-    $(document).ready( function () {
-        showSwal('password-updated');
-    });
-    @endif
+    <script type="text/javascript">
+        @if(Session::has('passwordupdated'))
+        $(document).ready( function () {
+            showSwal('password-updated');
+        });
+        @elseif(Session::has('logedout'))
+        $(document).ready( function () {
+            showSwal('logout');
+        });
+        @endif
+    </script>
 
 
-</script>
 
 </body>
 </html>
