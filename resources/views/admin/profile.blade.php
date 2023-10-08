@@ -1,9 +1,7 @@
 @extends('admin.body.main')
 @section('title','Admin Panel')
 @section('main')
-    @push('script')
-
-    @endpush
+    <div class="page-content">
 {{--    <div class="row">--}}
 {{--        <div class="col-12 grid-margin">--}}
 {{--            <div class="card">--}}
@@ -182,6 +180,7 @@
         </div>
         <!-- middle wrapper end -->
 
+    </div>
     </div>
     @push('script')
         {{--  <script src="{{asset('jquery-3.7.1.min.js')}}"></script>  --}}

@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ManagerController;
+Use App\Http\Controllers\Pos\SupplierController;
+use App\Http\Controllers\Pos\CustomerController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +50,18 @@ Route::middleware(['auth','role:admin'])->group(function () {
 
 });
 //End AdminController All Route
+//SupplierController All Route
+Route::middleware(['auth','role:admin'])->group(function () {
+    Route::controller(SupplierController::class)->group(function (){
+        Route::get('supplier/all','SupplierAll')->name('supplier.all');
+        Route::post('supplier/add','AddSupplier')->name('supplier.add');
+
+    });
+
+
+});
+//End SupplierController All Route
+
 Route::controller(AdminController::class)->group(function (){
     Route::get('admin/login','AdminLogin')->name('admin.login');
 });

@@ -171,7 +171,15 @@ $(function() {
           showConfirmButton: false,
           timer: 2000
         })
-      }
+      }else if (type === 'supplierAdded') {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Add Supplier successfully',
+            showConfirmButton: false,
+            timer: 2000
+        })
+    }
 
 
 
